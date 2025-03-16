@@ -25,13 +25,39 @@ class printedBooks extends Book{
         System.out.println("Pages :"+pages);
     }
 }
+class EBooks extends Book{
+    String format;
+    public EBooks(String author,String title,String format){
+        super(author,title);
+        this.format = format;
+    }
 
+    public void displayBook(){
+        System.out.println("\nAuthor is :"+author+"\nTitle is :"+title);
+        System.out.println("Format :"+format);
+    }
+}
+class AudioBooks extends Book{
+    String duration;
+    public AudioBooks(String author,String title,String duration){
+        super(author,title);
+        this.duration = duration;
+    }
+
+    public void displayBook(){
+        System.out.println("\nAuthor is :"+author+"\nTitle is :"+title);
+        System.out.println("Duration :"+duration);
+    }
+}
 public class Main{
     public static void main(String[] args) {
-        Book book1 = new Book("pakaya","paka book");
-        printedBooks book2 = new printedBooks("paka2", "paka2", 23);
-
+        Book book1 = new Book("auth01","book01");
+        printedBooks book2 = new printedBooks("auth02", "book02", 23);
+        EBooks book3 = new EBooks("auth03", "book03", "pdf");
+        AudioBooks book4 = new AudioBooks("auth04", "book04", "1.23");
         book1.displayBook();
         book2.displayBook();
+        book3.displayBook();
+        book4.displayBook();
     }
 }
